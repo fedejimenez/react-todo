@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 class NewTodoForm extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class NewTodoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTodo(this.state);
+    this.props.createTodo({ ...this.state, id: uuidv4() });
     this.setState({ task: "" });
   }
 
