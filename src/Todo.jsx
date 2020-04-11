@@ -27,12 +27,12 @@ class Todo extends React.Component {
   handleUpdate(e) {
     e.preventDefault();
     this.props.updateTodo(this.props.id, this.state.task);
-    this.toggleForm();
+    this.setState({ isEditing: false });
   }
 
   handleChange(e) {
     this.setState({
-      task: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
@@ -47,7 +47,7 @@ class Todo extends React.Component {
           <form className="Todo-edit-form" onSubmit={this.handleUpdate}>
             <input
               type="text"
-              velue={this.state.task}
+              value={this.state.task}
               name="task"
               onChange={this.handleChange}
             />

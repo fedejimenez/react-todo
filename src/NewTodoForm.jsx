@@ -33,6 +33,7 @@ class NewTodoForm extends React.Component {
           name="task"
           value={this.state.task}
           onChange={this.handleChange}
+          required
         />
         <button>Add Todo</button>
       </form>
