@@ -50,6 +50,7 @@ class Todo extends React.Component {
               value={this.state.task}
               name="task"
               onChange={this.handleChange}
+              required
             />
             <button>Save</button>
           </form>
